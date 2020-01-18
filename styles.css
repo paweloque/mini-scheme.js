@@ -1,0 +1,191 @@
+body {
+  font-family: sans-serif;
+  padding: 10px 2.5%;
+  max-width: 1200px;
+}
+
+h4 {
+  margin-bottom: 5px;
+}
+
+code.chrome {
+  margin: 1px;
+}
+
+textarea {
+  width: calc(100% - 44px);
+  height: 250px;
+  margin-left: 40px;
+  padding: 1px;
+}
+
+p.error {
+  border: 5px solid red;
+  background-color: salmon;
+  padding: 15px;
+}
+
+small {
+  float: right;
+  height: 0;
+}
+
+small.error {
+  color: red;
+}
+
+div.ast h4, div.tokens h4, #app div.env:first h4 {
+  margin-top: 0;
+}
+
+div.ast {
+  float: left;
+  width: calc(45% - 20px);
+  margin-left: 20px;
+}
+
+div.tokens {
+  float: left;
+  width: 30%;
+}
+
+div.env {
+  float: left;
+  width: calc(25% - 20px);
+  margin-left: 20px;
+}
+
+hr {
+  clear: both;
+  border: none;
+}
+
+span.token {
+  border: 2px darkblue solid;
+  background-color: lightblue;
+  padding: 2px 5px;
+  border-radius: 4px;
+  line-height: 2.2;
+}
+
+span.tokendone {
+  border: 2px darkblue solid;
+  background-color: #BCADE6;
+  padding: 2px 5px;
+  border-radius: 4px;
+  line-height: 2.2;
+}
+
+span.tokenstarted {
+  border: 2px darkblue solid;
+  background-color: #B2E6AD;
+  padding: 2px 5px;
+  border-radius: 4px;
+  line-height: 2.2;
+}
+
+ul.env {
+  display: inline-block;
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+ul.env li {
+  border: 2px solid darkgoldenrod;
+  background-color: lightgoldenrodyellow;
+  padding: 2px 5px;
+  border-radius: 4px;
+  margin: 3px 0;
+}
+
+div.ast li {
+  font-weight: normal;
+  padding-left: 10px;
+  text-indent: -10px;
+  list-style: none;
+}
+
+div.ast li li::before {
+  content: "\00a0";
+  padding-right: 5px;
+}
+
+div.ast ul:not(.lambdaArgList) > li:first-child {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+div.ast ul:not(.lambdaArgList) > li:first-child:before {
+  content: "▼";
+}
+
+div.ast ul.collapsed > li:first-child:before {
+  content: "▶";
+}
+
+div.ast ul.collapsed > li:first-child:after {
+  content: " [...]";
+}
+
+div.ast li.lambda, div.ast li.define, div.ast li.if, div.ast li.begin {
+  /* special forms */
+  font-style: italic;
+}
+
+div.ast ul.collapsed > li:first-child ~ li {
+  display: none;
+}
+
+div.ast ul {
+  display: inline-block;
+  list-style: none;
+  vertical-align: middle;
+  margin: 3px 0px;
+  padding: 1px 10px 1px 5px;
+  border: 3px solid green;
+  border-radius: 9px;
+}
+
+li, span.token, textarea, p.code, code {
+  font-family: monospace;
+  font-size: 16px;
+}
+
+.tooltip {
+    position: relative;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -8px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: .9;
+}
